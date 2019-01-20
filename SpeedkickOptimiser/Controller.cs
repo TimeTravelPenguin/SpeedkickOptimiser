@@ -14,6 +14,7 @@ namespace SpeedkickOptimiser
         public float stickY { get; set; }
         public float stickMag { get; set; }
         public double stickAngle { get; set; }
+        public double rawStickAngle { get; set; }
 
         public Controller(int rawstickX, int rawstickY)
         {
@@ -49,6 +50,7 @@ namespace SpeedkickOptimiser
                 stickMag = 64;
             }
 
+            rawStickAngle = Math.Atan2(rawstickY, rawstickX);
             stickAngle = Math.Atan2(stickY, stickX);
         }
     }

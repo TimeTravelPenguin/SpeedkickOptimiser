@@ -46,11 +46,11 @@ namespace SpeedkickOptimiser
             // do max coords for new angle
             double r = 48; // max speedkick magnitude
 
-            int maxX = (int)Math.Ceiling(r * Math.Cos(maxAngle) + 6);
+            int maxX = (int)Math.Ceiling(r * Math.Cos(maxAngle) - 6);
             int minX = (int)Math.Ceiling(r * Math.Cos(minAngle) + 6);
 
             int maxY = (int)Math.Ceiling(r * Math.Sin(maxAngle) + 6);
-            int minY = (int)Math.Ceiling(r * Math.Sin(minAngle) + 6);
+            int minY = (int)Math.Ceiling(r * Math.Sin(minAngle) - 6);
 
             // find max Mag
             List<Controller> controllerList = new List<Controller>();
