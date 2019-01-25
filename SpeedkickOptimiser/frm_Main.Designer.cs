@@ -37,11 +37,6 @@
             this.lblA = new System.Windows.Forms.Label();
             this.numAngle = new System.Windows.Forms.NumericUpDown();
             this.dataGrid_StickOutput = new System.Windows.Forms.DataGridView();
-            this.stickX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stickY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stickAngle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stickAngleDelta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stickMag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblM = new System.Windows.Forms.Label();
             this.lbl_Magnitude = new System.Windows.Forms.Label();
             this.lblA2 = new System.Windows.Forms.Label();
@@ -53,6 +48,11 @@
             this.lblSelected_Angle = new System.Windows.Forms.Label();
             this.lblSelected_Mag = new System.Windows.Forms.Label();
             this.lblSelectedMag = new System.Windows.Forms.Label();
+            this.stickX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stickY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stickAngle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stickAngleDelta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stickMag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numStickY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStickX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAngle)).BeginInit();
@@ -161,41 +161,6 @@
             this.dataGrid_StickOutput.TabIndex = 5;
             this.dataGrid_StickOutput.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_StickOutput_CellClick);
             // 
-            // stickX
-            // 
-            this.stickX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stickX.HeaderText = "Raw Stick X";
-            this.stickX.Name = "stickX";
-            this.stickX.ReadOnly = true;
-            // 
-            // stickY
-            // 
-            this.stickY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stickY.HeaderText = "Raw Stick Y";
-            this.stickY.Name = "stickY";
-            this.stickY.ReadOnly = true;
-            // 
-            // stickAngle
-            // 
-            this.stickAngle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stickAngle.HeaderText = "Deg θ";
-            this.stickAngle.Name = "stickAngle";
-            this.stickAngle.ReadOnly = true;
-            // 
-            // stickAngleDelta
-            // 
-            this.stickAngleDelta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stickAngleDelta.HeaderText = "Δθ";
-            this.stickAngleDelta.Name = "stickAngleDelta";
-            this.stickAngleDelta.ReadOnly = true;
-            // 
-            // stickMag
-            // 
-            this.stickMag.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stickMag.HeaderText = "Stick Mag";
-            this.stickMag.Name = "stickMag";
-            this.stickMag.ReadOnly = true;
-            // 
             // lblM
             // 
             this.lblM.AutoSize = true;
@@ -300,6 +265,46 @@
             this.lblSelectedMag.Size = new System.Drawing.Size(76, 13);
             this.lblSelectedMag.TabIndex = 8;
             this.lblSelectedMag.Text = "Selected Mag:";
+            // 
+            // stickX
+            // 
+            this.stickX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stickX.HeaderText = "Raw Stick X";
+            this.stickX.Name = "stickX";
+            this.stickX.ReadOnly = true;
+            this.stickX.ToolTipText = "The X value needed to be used in the TAS Tool";
+            // 
+            // stickY
+            // 
+            this.stickY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stickY.HeaderText = "Raw Stick Y";
+            this.stickY.Name = "stickY";
+            this.stickY.ReadOnly = true;
+            this.stickY.ToolTipText = "The Y value needed to be used in the TAS Tool";
+            // 
+            // stickAngle
+            // 
+            this.stickAngle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stickAngle.HeaderText = "Deg θ";
+            this.stickAngle.Name = "stickAngle";
+            this.stickAngle.ReadOnly = true;
+            this.stickAngle.ToolTipText = "The angle made by the processed inputs, post game logic";
+            // 
+            // stickAngleDelta
+            // 
+            this.stickAngleDelta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stickAngleDelta.HeaderText = "Δθ";
+            this.stickAngleDelta.Name = "stickAngleDelta";
+            this.stickAngleDelta.ReadOnly = true;
+            this.stickAngleDelta.ToolTipText = "The angle amount that this point strays from the original input angle";
+            // 
+            // stickMag
+            // 
+            this.stickMag.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stickMag.HeaderText = "Stick Mag";
+            this.stickMag.Name = "stickMag";
+            this.stickMag.ReadOnly = true;
+            this.stickMag.ToolTipText = "The magnitude of the point. To speedkick, you need 48 or less.";
             // 
             // frm_Main
             // 

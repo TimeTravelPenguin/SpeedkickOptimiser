@@ -23,14 +23,21 @@ namespace SpeedkickOptimiser
 
             int x = (int)numStickX.Value;
             int y = (int)numStickY.Value;
+            double deltaAngle = (double)numAngle.Value * (Math.PI / 180); // convert to radians
 
             dataGrid_StickOutput.Rows.Clear();
-            Speedkick(x, y);
+            Speedkick(x, y, deltaAngle);
 
             btn_Calculate.Enabled = true;
         }
 
-        private void Speedkick(int rawStickX, int rawStickY)
+        /// <summary>
+        /// Calculates speedkick coordinates
+        /// </summary>
+        /// <param name="rawstickX">The X coordinate on the TAS Tool</param>
+        /// <param name="rawstickY">The Y coordinate on the TAS Tool</param>
+        /// <param name="deltaAngle">The off-axis angle in degrees to check for speedkick coordinates</param>
+        private void Speedkick(int rawStickX, int rawStickY, double deltaAngle)
         {
             // update labels
             Controller inputController = new Controller(rawStickX, rawStickY);
@@ -38,7 +45,6 @@ namespace SpeedkickOptimiser
             lbl_Angle.Text = $"{(float)(inputController.stickAngle * (180 / Math.PI))}";
 
             double angle = inputController.stickAngle;
-            double deltaAngle = (double)numAngle.Value * (Math.PI / 180); // convert to radians
 
             double maxAngle = angle + deltaAngle;
             double minAngle = angle - deltaAngle;
@@ -83,6 +89,7 @@ namespace SpeedkickOptimiser
             dataGrid_StickOutput.Sort(dataGrid_StickOutput.Columns["stickMag"], ListSortDirection.Descending);
 
         }
+
 
         private void dataGrid_StickOutput_CellClick(object sender, DataGridViewCellEventArgs e)
         {

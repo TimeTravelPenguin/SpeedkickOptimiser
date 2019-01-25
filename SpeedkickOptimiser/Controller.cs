@@ -16,11 +16,17 @@ namespace SpeedkickOptimiser
         public double stickAngle { get; set; }
         public double rawStickAngle { get; set; }
 
+        /// <summary>
+        /// Create controller to store stick position informtaion
+        /// </summary>
+        /// <param name="rawstickX">The X coordinate on the TAS Tool</param>
+        /// <param name="rawstickY">The Y coordinate on the TAS Tool</param>
         public Controller(int rawstickX, int rawstickY)
         {
             rawStickX = rawstickX;
             rawStickY = rawstickY;
 
+            #region N64 Controller Logic
             // reset the controller's x and y floats.
             stickX = 0;
             stickY = 0;
@@ -49,6 +55,7 @@ namespace SpeedkickOptimiser
                 stickY *= 64 / stickMag;
                 stickMag = 64;
             }
+            #endregion
 
             rawStickAngle = Math.Atan2(rawstickY, rawstickX);
             stickAngle = Math.Atan2(stickY, stickX);
