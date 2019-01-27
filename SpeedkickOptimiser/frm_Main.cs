@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// By TimeTravelPenguin
+
 namespace SpeedkickOptimiser
 {
     public partial class frm_Main : Form
