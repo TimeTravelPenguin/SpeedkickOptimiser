@@ -14,6 +14,14 @@ namespace SpeedkickOptimiser
 {
     public partial class frm_Main : Form
     {
+
+        // This application will calculate angles to be used for a "speedkick" technique
+        // specific to Super Mario 64 Tool-Assisted Speedrunning.
+        // It is important to note that this logic works by taking RAW Data, being the analogue
+        // stick's X and Y positions, and converting it to a precessed coordinate system used by
+        // the game code's logic. I don't know why the game devs did what they did. I am just the
+        // monkey who made this program based off their code.
+
         public frm_Main()
         {
             InitializeComponent();
