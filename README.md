@@ -1,7 +1,7 @@
 # SpeedkickOptimiser
 Optimisation tool for speedkicks in Super Mario 64 TASing
 
-![alt text](https://imgur.com/Yt6DGQx "Video example")
+![alt text](https://i.imgur.com/Yt6DGQx.gif "Video example")
 
 This tool helps to find angles suitable for speedkick similar to the current input angle,
 and allows you to narrow it down to those of larger analogue stick magnitudes. Whether you need speed of precice angle, this tool will help.
